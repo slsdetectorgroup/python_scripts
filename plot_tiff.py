@@ -27,7 +27,7 @@ dt = np.float32
 #Read
 with open(fname) as f:
     f.seek(8) #skip header
-    image = np.fromfile(f, dtype = dt, count = nx*ny).reshape((nx,ny))
+    image = np.fromfile(f, dtype = dt, count = nx*ny).reshape((nx,ny), order = 'C')
 
 #Plot 
 plt.figure()
